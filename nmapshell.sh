@@ -217,8 +217,7 @@ run_nmap(){
 
 
 
-report(){
-    section "Generating Report"
+
     report(){
     section "Generating Report"
 
@@ -306,7 +305,6 @@ report(){
         awk '/^[0-9]+\/udp/{port=$0; print_block=1; next} /^[0-9]+\/tcp/{print_block=0} /^\| / && print_block{print port; print; port=""}' "$outdir/udp_scan.txt" | uniq
     fi
 }   
-}
 
 field_validationChecks
 verify_nmap_installed
